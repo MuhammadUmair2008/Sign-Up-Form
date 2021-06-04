@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.tynker.com/projects/images/5bf3a8b98409f22b6752f0f8/background-scene---number-guessing-game.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <style>
+body {
+   background-color: greenyellow;
+}
+input{
+    border: 4px white solid;
+    display: inline block;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+img {
+  border: 7px solid black;
+}
+h1 {
+  font-family: 'Zen Dots', cursive;
+  font-size: 40px;
+  color: white;
+}
+.signout{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 30px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    
+}
+.signout:hover{
+    background: #2ecc71;
+    box-shadow: 0 0 30px #2ecc71;
+}
+    </style>
+    <title>NUMBER GUESSING GAME</title>
+</head>
+<body>
+    <center><h1 id="text"><b>N</b></h1></center>
+    <center><img src="https://www.funbrain.com/assets/img/content-cards/F2qRmLhRnmebc8jJAUjr_GuessTheNumber%403x.png" height="400px" width="300px" alt=""></center>
+    <center><input type="BUTTON" value="PLAY GAME" onclick="parent.location='../number-guessing-level.html'"></center>
+    <center><button onclick="signOut()" id="signOut" class="signout">SIGN OUT</button></center>
+    <script>
+let text = document.getElementById('text');
+let para2 = 'NUMBER GUESSING\n GAME'
+let x = 1;
+setInterval(write,115);
+
+function write () {
+    text.innerText = para2.slice(0,x);
+    x++;
+    // if(x > para2.length) {
+    //     x=1;
+    // }
+    
+}
+    </script>
+    <script src="/index.js"></script>
+</body>
+</html>

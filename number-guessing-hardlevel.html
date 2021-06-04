@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.tynker.com/projects/images/5bf3a8b98409f22b6752f0f8/background-scene---number-guessing-game.png">
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <style>
+        .signout{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid yellow;
+    padding: 14px 30px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+   
+}
+.signout:hover{
+    background: yellow;
+    box-shadow: 0 0 25px yellow;
+}
+body{
+    text-align: center;
+    font-family: sans-serif;
+    
+}
+h1{
+    color: black;
+    background-color: yellow ;
+    padding: 30px 0;
+}
+p{
+    font-size: 20px;
+}
+.container{
+    background-color: yellow;
+    padding-bottom: 80px;
+    padding-top: 10px;
+}
+.label1{
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+}
+#input1{
+    margin-top: 25px;
+    margin-bottom: 35px;
+    font-size: 40px;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 7px solid black;
+    border-radius: 4px;
+    width: 50vw;
+    
+}
+#button{
+    font-size: 30px;
+    padding: 10px 40px;
+   background-color: #062647;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+}
+.guess{
+    color: black;
+}
+.heading1{
+    background-color:yellow ;
+    color:black;
+    font-size: 35px;
+    letter-spacing:1.3px;
+    font-weight: bold;
+    padding: 10px 0;
+    cursor: pointer;
+}
+input{
+    border: 4px black solid;
+    display: inline block;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: black;
+    background-color: yellow;
+    font-weight: bold;
+}
+    </style>
+    <title>NUMBER GUESSING GAME</title>
+</head>
+<body>
+    <h1>NUMBER GUESSING GAME</h1>
+    <p>Try and guess a random number between 1 and 100.</p>
+    <p>You have 10 attempts to guess the right number</p>
+    <div class="container">
+        <div class="row">
+        <form>
+            <label class="label1" for="fname">Guess a number</label>
+        <br>
+            <input id = "input1" type="number" id="fname" name="fname">
+            <br>
+            <input id ="button" type="submit" value="ENTER">
+            </div>
+        </form>
+        <p class="guess">Previous Guesses : <span class="guesses"></span></p>
+        <p id = "guessRem" class="guess">Guesses Remaining: <span id = "remainingGuess">10</span> </p>
+        <h2 class="newhead2" id = "newhead"></h2>
+        <h2 id="newGame"></h2>
+    </div>
+    <br>
+    <center><input type="BUTTON" value="GO BACK" onclick="parent.location='../number-guessing-level.html'"></center>
+    <center><button onclick="signOut()" id="signOut" class="signout">SIGN OUT</button></center>
+<script type ="text/javascript">
+var newgame = document.getElementById('newGame');
+var newhead1 = document.getElementById('newhead');
+var inputBox = document.getElementById('input1');
+var prevGuess = document.querySelector('.guesses');
+var guessRem= document.getElementById('remainingGuess');
+var numGuesses = 1;
+
+function startGame(){
+    var random1 = Math.round(Math.random()*100);
+    random = random1;
+    
+    function compare(x,y){
+        if(x===y){
+            newhead1.classList.add('heading1');
+            newhead1.innerHTML="You Guessed Correctly!!";
+            inputBox.setAttribute('disabled', '');
+            newgame.classList.add('heading1');
+            newgame.innerHTML="Start New Game!";       
+        }
+        else if (x < y){
+            newhead1.classList.add('heading1');
+            newhead1.innerHTML="Too low! Guess again!";
+        }
+        else if (x > y){
+            newhead1.classList.add('heading1');
+            newhead1.innerHTML="Too high! Guess again!";
+        }
+    }
+
+    function limitnum(){
+        newhead1.classList.add('heading1');
+        newhead1.innerHTML="Oh! You couldn't guess the right number!!! The real number was " + `${random}`;
+        inputBox.setAttribute('disabled', '');
+        newgame.classList.add('heading1');
+        newgame.innerHTML="Start New Game!";
+    }
+    
+    function displayGuesses(){
+        numGuesses++;
+        guessRem.innerHTML = `${11 - numGuesses}  `;
+        if (numGuesses === 11){
+            limitnum();
+        }
+    }
+
+    function myfunc(event){
+        event.preventDefault();
+        var input12 = inputBox.value;
+        input2=Number(input12);
+        if(input2===0){
+
+        }
+        if((input2<1 || input2>100) && input2 !== 0){
+            alert('please enter a valid number!');
+        }
+        else if(input2 !== 0){
+            compare(input2, random);
+            inputBox.value="";
+            prevGuess.innerHTML+=`${input2} `;
+            displayGuesses();
+        }
+    }
+    document.getElementById('button').addEventListener('click',myfunc);
+}
+startGame();
+
+document.getElementById('newGame').addEventListener('click',function(){
+    startGame();
+    newgame.innerHTML="";
+    newgame.classList.remove('heading1');
+    newhead1.innerHTML="";
+    newhead1.classList.remove('heading1');
+    numGuesses = 1;
+    guessRem.innerHTML = `${11 - numGuesses}  `;
+    prevGuess.innerHTML = "";
+    inputBox.removeAttribute('disabled');
+})
+</script>    
+<script src="/index.js"></script>
+</body>
+</html>

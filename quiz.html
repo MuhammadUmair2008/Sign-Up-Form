@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <style>
+        
+  body {
+       background: linear-gradient(90deg, rgba(151,157,177,1) 43%, rgba(255,255,255,1) 100%);
+      
+  }
+  .signout{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 30px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+   
+}
+.signout:hover{
+    background: black;
+    color: white;
+    box-shadow: 0 0 10px black;
+}
+  input{
+    border: 4px white solid;
+    display: inline block;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+   
+}
+h1 {
+  font-family: 'Goblin One', cursive;
+}
+    </style>
+    <title>QUICK QUIZ</title>
+</head>
+<body><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <center> <h1><b>QUICK QUIZ</b></h1></center><br><br>
+   <center><input type="BUTTON" value="PLAY" onclick="parent.location='../quiz-question.html'"></center><br><br><br>
+   <button onclick="signOut()" id="signOut" class="signout">SIGN OUT</button>
+   <script src="/index.js"></script>
+</body>
+</html>

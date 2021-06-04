@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #145374;
+    
+}
+.box h1{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+.box{
+    height: 330px;
+    width: 340px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(76,76,76,1);
+background: -moz-linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(89,89,89,1) 0%, rgba(43,43,43,1) 0%, rgba(28,28,28,1) 0%, rgba(19,19,19,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(76,76,76,1)), color-stop(0%, rgba(102,102,102,1)), color-stop(0%, rgba(71,71,71,1)), color-stop(0%, rgba(44,44,44,1)), color-stop(0%, rgba(0,0,0,1)), color-stop(0%, rgba(17,17,17,1)), color-stop(0%, rgba(89,89,89,1)), color-stop(0%, rgba(43,43,43,1)), color-stop(0%, rgba(28,28,28,1)), color-stop(100%, rgba(19,19,19,1)));
+background: -webkit-linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(89,89,89,1) 0%, rgba(43,43,43,1) 0%, rgba(28,28,28,1) 0%, rgba(19,19,19,1) 100%);
+background: -o-linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(89,89,89,1) 0%, rgba(43,43,43,1) 0%, rgba(28,28,28,1) 0%, rgba(19,19,19,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(89,89,89,1) 0%, rgba(43,43,43,1) 0%, rgba(28,28,28,1) 0%, rgba(19,19,19,1) 100%);
+background: linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(89,89,89,1) 0%, rgba(43,43,43,1) 0%, rgba(28,28,28,1) 0%, rgba(19,19,19,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=1 );
+    text-align: center;
+}
+.box input[type = "email"],.box input[type = "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    
+}
+.box input[type = "email"]:focus,.box input[type = "password"]:focus{
+width: 280px;
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px #2ecc71;
+}
+.box button{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 30px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.box button:hover{
+    background: #2ecc71;
+    box-shadow: 0 0 13px #2ecc71;
+}
+
+p {
+    color: white;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <link rel="icon" href="/images/snake title.png">
+    <style>
+.signout{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid green;
+    padding: 14px 30px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+   
+}
+.signout:hover{
+    background: yellow;
+    box-shadow: 0 0 20px yellow;
+    
+}
+h4 {
+border: 7px solid black;
+height: 150px;
+width: 300px;
+background-color: yellow;
+}
+input{
+    border: 4px  yellow solid;
+    display: inline block;
+    padding: 12px 15px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    text-align: center;
+}
+body {
+    background-color: yellowgreen;
+}
+h1 {
+    color: #fff;
+}
+    </style>
+    <title>SNAKE GAME</title>
+</head>
+<body><br><br><br><br><br>
+    <center><h1 id="text"></h1></center><br><br><br>
+    <center><h4 id="text2"></h4>
+        <center><input type="BUTTON" value="OK" onclick="parent.location='../snake-game.html'"></center>
+        <script>
+let text = document.getElementById('text');
+let text2 = document.getElementById('text2');
+let para = 'INSTRUCTIONS'
+let para2 = '1.Your score will be shown \nat the top\n2.Do not touch the border line.\nIf you will touch the border line \nthe game will be over\n3.If the game will be over so \n you have to reload \nthe page again'
+let x = 1;
+setInterval(write,115);
+
+function write () {
+    text.innerText = para.slice(0,x);
+    text2.innerText = para2.slice(0,x);
+    x++;
+    // if(x > para3.length) {
+    //     x=1;
+    // }
+    
+}
+        </script>
+        <button onclick="signOut()" id="signOut" class="signout">SIGN OUT</button>
+    <script src="/index.js"></script>
+</body>
+</html>
